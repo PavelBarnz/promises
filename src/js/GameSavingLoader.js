@@ -8,13 +8,10 @@ export default class GameSavingLoader {
     return new Promise((resolve) => {
       const data = read();
       data.then((response) => {
-        const stringData = json(response);
-        // eslint-disable-next-line no-shadow
-        stringData.then((response) => {
-          const gameSaving = JSON.parse(response);
-          resolve(gameSaving);
-        });
-      });
+        return json(response);
+      }).then(response => {
+        resolve(JSON.parse(response));
+      })
     });
   }
 }
