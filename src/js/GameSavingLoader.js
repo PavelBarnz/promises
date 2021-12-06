@@ -7,11 +7,9 @@ export default class GameSavingLoader {
   static load() {
     return new Promise((resolve) => {
       const data = read();
-      data.then((response) => {
-        return json(response);
-      }).then(response => {
+      data.then((response) => json(response)).then((response) => {
         resolve(JSON.parse(response));
-      })
+      });
     });
   }
 }

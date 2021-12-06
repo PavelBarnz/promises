@@ -2,4 +2,4 @@ dist
 coverage
 docs
 __tests__
-*js
+webpack.config.js
